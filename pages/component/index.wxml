@@ -1,0 +1,61 @@
+<import src="../common/nav.wxml" />
+<import src="../common/bar.wxml" />
+<import src="../common/productList.wxml" />
+<view class="main">
+  <template is="bar" data="{{category_info}}" />
+  <template is="nav" data="{{config}}" />
+  <view class="index-top">
+    <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image mode="widthFix" src="{{item}}" data-type="index_autoplay_imgurl" data-index="{{index}}" bindtap="tocategory" class="slide-image" />
+        </swiper-item>
+      </block> 
+    </swiper>
+  </view>
+  <view class="sub_bar">
+    <view wx:for="{{config.pagenav_img}}" wx:key="{{item}}" data-index="{{index}}" data-type="pagenav_imgurl" bindtap="tocategory">
+      <image src="{{item}}"/>
+    </view>
+  </view>
+  <view class="product-display" wx:if="{{config.dailyoffice_display=='true'}}">
+    <view class="product-display-title bg_color" style="color:{{config.dailyoffice_color}};background-color:{{config.dailyoffice_bgcolor}};">
+      <view class="title"><text>{{config.dailyoffice_title}}</text></view>
+    </view>
+    <view class="product-display-ul">
+      <template is="product_list" data="{{product1}}" />
+    </view>
+  </view>
+
+  <view class="product-display" wx:if="{{config.writingtools_display=='true'}}">
+    <view class="product-display-title bg_color3" style="color:{{config.writingtools_color}};background-color:{{config.writingtools_bgcolor}};">
+        <view class="title"><text>{{config.writingtools_title}}</text></view>
+    </view>
+    <view class="product-display-ul">
+      <template is="product_list" data="{{product2}}" />
+    </view>
+  </view>
+
+  <view class="product-display" wx:if="{{config.paperin_display=='true'}}">
+    <view class="product-display-title bg_color3" style="color:{{config.paperin_color}};background-color:{{config.paperin_bgcolor}};">
+        <view class="title"><text>{{config.paperin_title}}</text></view>
+    </view>
+    <view class="product-display-ul">
+      <template is="product_list" data="{{product3}}" />
+    </view>
+  </view>
+
+  <view class="product-display" wx:if="{{config.learningsupply_display=='true'}}">
+    <view class="product-display-title bg_color3" style="color:{{config.learningsupply_color}};background-color:{{config.learningsupply_bgcolor}};">
+        <view class="title"><text>{{config.learningsupply_title}}</text></view>
+    </view>
+    <view class="product-display-ul">
+      <template is="product_list" data="{{product4}}" />
+    </view>
+  </view>
+
+ </view>
+ <view class="help-port small_font" data-index="0" data-type="navarticle_url" bindtap="tocategory">{{config.navarticle_title}}</view>
+ <view class="copyright small_font">
+   @{{config.copyright}}
+ </view>

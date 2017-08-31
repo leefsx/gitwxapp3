@@ -1,0 +1,25 @@
+<import src="../../common/prompt.wxml"/>
+<import src="../../common/nav.wxml" />
+<import src="../../common/bar.wxml" />
+<import src="../../common/article_bar.wxml" />
+
+
+
+<view class="main">
+    <template is="nav" data="{{config}}" />
+    <template is="bar" data="{{category_info}}" />
+    <template is="article_bar" data="{{scrollLeft,activeIndex,articalUl}}" />
+    <view class="artical-ul">
+        <navigator wx:for="{{article}}" url="../article-detail/article-detail?id={{item.id}}" class="artical-li">
+            <view class="artical-li-title">
+                <view>
+                    <text class="color5">[{{item.category_name}}]</text>
+                    <text class="tooLong" style="max-width:300rpx;display:inline-block;vertical-align:top;">[{{item.title}}]</text>
+                </view>
+                <text class="color2 small_font">{{item.publish_time}}</text>
+            </view>
+            <view class="color2 small_font tooLong">{{item.content}}</view>
+        </navigator>
+        <template is="prompt" data="{{prompt}}"></template>
+    </view>
+</view>

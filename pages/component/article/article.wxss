@@ -1,0 +1,26 @@
+@import '/pages/common/article_bar.wxss';
+.main{
+    width: 100%;
+    height: 100%;
+    color: #383838;
+    background-color: #fff;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+}
+.artical-ul{margin-top:40rpx;}
+.artical-li{
+    padding:10rpx 40rpx;
+    display: flex;
+    flex-direction: column;
+}
+.artical-li-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+

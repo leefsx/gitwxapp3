@@ -1,0 +1,23 @@
+<import src="../../common/nav.wxml" />
+<import src="../../common/bar.wxml" />
+<import src="../../common/article_bar.wxml" />
+
+
+<view class="main">
+    <template is="nav" data="{{config}}" />
+    <template is="bar" data="{{category_info}}" />
+    <view style="padding:0 10rpx;"><template is="article_bar" data="{{scrollLeft,activeIndex,articalUl}}" /></view>
+    <view class="artical-detail">
+        <view class="artical-detail-title">
+            <view>{{article.title}}</view>
+            <view class="small_font color2">来源:<text class="gap">{{article.source}}</text>  发布时间:<text class="gap">{{article.publish_time}}</text>   <text>{{article.v_num}}</text>次浏览 </view>
+        </view>
+        <view class="artical-detail-dec medium_font">
+            {{article.intro}}
+        </view>
+        <view class="artical-detail-main medium_font">
+            <import src="../../../common/wxParse.wxml" />
+            <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+        </view>
+    </view>
+</view>
