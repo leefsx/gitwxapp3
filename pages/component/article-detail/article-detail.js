@@ -12,16 +12,16 @@ Page({
         scrollLeft:0,
         articalUl:[],
         li_width:0,
-        category_info: {
-          category: [],
-          isShowBar: false
-        }
+        topNavs:{
+          navList:[],
+          isShowBar:false
+        },
     
     },
     onShow: function () {
       let li_width = this.data.li_width
       let that= this
-      bar.getCategory(this)
+      // bar.getCategory(this)
       wx.getSystemInfo({
         success: function (res) {
           li_width = res.windowWidth/750*210
@@ -29,6 +29,7 @@ Page({
             li_width:li_width,
             deviceWidth: res.windowWidth,
             deviceHeight: res.windowHeight,
+            'topNavs.navList':app.globalData.navList
           })
         }
       })
@@ -76,6 +77,8 @@ Page({
       })
       that.setData({
         config: config,
+        page_title:'新闻资讯',
+        page_title_en:'NEWS'
       })
       this.getArticleCategory()
 

@@ -1,57 +1,63 @@
 <import src="../common/nav.wxml" />
 <import src="../common/bar.wxml" />
-<import src="../common/productList.wxml" />
+<import src="../common/productList2.wxml" />
 <view class="main">
-  <template is="bar" data="{{category_info}}" />
+  <template is="bar" data="{{topNavs}}" />
   <template is="nav" data="{{config}}" />
-  <view class="index-top">
-    <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
-      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
-        <swiper-item>
-          <image mode="widthFix" src="{{item}}" data-type="index_autoplay_imgurl" data-index="{{index}}" bindtap="tocategory" class="slide-image" />
-        </swiper-item>
-      </block> 
-    </swiper>
-  </view>
-  <view class="sub_bar">
-    <view wx:for="{{config.pagenav_img}}" wx:key="{{item}}" data-index="{{index}}" data-type="pagenav_imgurl" bindtap="tocategory">
-      <image src="{{item}}"/>
-    </view>
-  </view>
-  <view class="product-display" wx:if="{{config.dailyoffice_display=='true'}}">
-    <view class="product-display-title bg_color" style="color:{{config.dailyoffice_color}};background-color:{{config.dailyoffice_bgcolor}};">
-      <view class="title"><text>{{config.dailyoffice_title}}</text></view>
-    </view>
-    <view class="product-display-ul">
-      <template is="product_list" data="{{product1}}" />
+  <view class="about-us">
+    <view class="about-us-bg bg_color5"></view>
+    <view class="about-us-main">
+      <image mode="aspectFit" src="/image/us-img.jpg"></image>
+      <view>
+        <view class="nav-list-name"><text>关于我们</text><text>ABOUT US</text></view>
+        <view class="medium_font">教育培训学校是XX地区最权威的 教育培训网络服务平台之一。网站创办于2005年，以XX地区丰富的教育培训教育培训网络服务平台之一教育培训务平台之一</view>
+      </view>
+      <navigator class="toDetail color5 medium_font" url="/pages/component/about_us/about_us">查看详情</navigator>
     </view>
   </view>
 
-  <view class="product-display" wx:if="{{config.writingtools_display=='true'}}">
-    <view class="product-display-title bg_color3" style="color:{{config.writingtools_color}};background-color:{{config.writingtools_bgcolor}};">
-        <view class="title"><text>{{config.writingtools_title}}</text></view>
-    </view>
-    <view class="product-display-ul">
-      <template is="product_list" data="{{product2}}" />
-    </view>
+  <view class="our-service">
+      <view class="nav-list-name"><text>我们的服务</text><text>OUR SERVICE</text></view>
+      <view class="service-main">
+        <navigator wx:for="{{service_img}}" url="{{item.url}}">
+          <image mode="aspectFit" src="{{item.img}}"></image>
+        </navigator>
+      </view>
   </view>
 
-  <view class="product-display" wx:if="{{config.paperin_display=='true'}}">
-    <view class="product-display-title bg_color3" style="color:{{config.paperin_color}};background-color:{{config.paperin_bgcolor}};">
-        <view class="title"><text>{{config.paperin_title}}</text></view>
-    </view>
-    <view class="product-display-ul">
-      <template is="product_list" data="{{product3}}" />
-    </view>
+  <view class="news">
+      <view class="nav-list-name"><text>新闻资讯</text><text>NEWS</text></view>
+      <view class="news-main">
+          <swiper indicator-dots="true" autoplay="true" interval="3000" duration="800" circular="true">
+            <block wx:for="{{news_img}}" wx:key="{{index}}">
+              <swiper-item>
+                <image mode="aspectFit" src="{{item}}"/>
+              </swiper-item>
+            </block> 
+          </swiper>
+          <view class="news-content bg_color5">
+              <view class="artical-ul">
+                  <navigator wx:for="{{article}}" url="/pages/component/article-detail/article-detail?id={{item.id}}" class="artical-li">
+                      <view class="artical-li-title small_font">
+                          <view>
+                              <text>[{{item.category_name}}]</text>
+                              <text class="tooLong" style="max-width:310rpx;display:inline-block;vertical-align:top;">{{item.content}}</text>
+                          </view>
+                          <text class="small_font">{{item.publish_time}}</text>
+                      </view>
+                  </navigator>
+                  <template is="prompt" data="{{prompt}}"></template>
+              </view>
+            <navigator class="toDetail medium_font" url="/pages/component/article/article">查看详情</navigator>
+          </view>
+      </view>
   </view>
 
-  <view class="product-display" wx:if="{{config.learningsupply_display=='true'}}">
-    <view class="product-display-title bg_color3" style="color:{{config.learningsupply_color}};background-color:{{config.learningsupply_bgcolor}};">
-        <view class="title"><text>{{config.learningsupply_title}}</text></view>
-    </view>
-    <view class="product-display-ul">
-      <template is="product_list" data="{{product4}}" />
-    </view>
+  <view>
+      <view class="nav-list-name"><text>产品中心</text><text>PRODUCTS</text></view>
+      <view class="product-center">
+          <template is="product_list2" data="{{products}}"/>
+      </view>
   </view>
 
  </view>

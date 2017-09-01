@@ -93,5 +93,27 @@ App({
     carts: [],
     cuser: [],
     barTocartID:null,
+    navList:[
+      {
+        name:"首页",
+        url:'/pages/component/index'
+      },
+      {
+        name:"关于我们",
+        url:'/pages/component/about_us/about_us'
+      },
+      {
+        name:"新闻资讯",
+        url:'/pages/component/article/article'
+      },
+      {
+        name:"产品中心",
+        url:'/pages/component/product/product'
+      }
+      // {
+      //   name:"联系我们",
+      //   url:'/pages/component/article-detail/article-detail?id=2'
+      // }
+    ]
   }
 })

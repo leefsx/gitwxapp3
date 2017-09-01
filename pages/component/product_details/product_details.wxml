@@ -1,0 +1,50 @@
+<import src="../../common/nav.wxml" />
+<import src="../../common/bar.wxml" />
+<import src="../../common/article_bar.wxml" />
+<view class="main">
+  <template is="nav" data="{{config,page_title,page_title_en}}"/>
+  <template is="bar" data="{{topNavs}}" />
+  <template is="article_bar" data="{{scrollLeft,activeIndex,articalUl}}" />
+  <view class="food-detail-xq">
+    <swiper indicator-dots="true" autoplay="false">
+      <swiper-item wx:for="{{detail_data.feature_img}}" wx:key="{{item}}">
+        <image src="{{item}}" mode="aspectFit" />
+      </swiper-item>
+    </swiper>
+    <view class="food-content">
+      <text class="food-name">{{detail_data.name}}</text>
+      <text class="food-price color small_font">价格：<text>{{detail_data.price}}</text></text>
+      <text class="food-old_price color2 small_font">市场价：<text>{{detail_data.mark_price}}</text></text>
+    </view>
+  </view>
+  <view class="good-box">
+    <!-- <view class="good-tab-box">
+      <text class="goods-tab-nav {{curIndex === 0 ?'on':''}}" bindtap="bindTap" data-index="0">
+        <text>商品信息</text>
+      </text>
+    </view> -->
+    <view class="good-content">
+        <view class="good-info" wx:if = "{{curIndex==0? true : false}}">
+          <view class="food-para">
+            <view class="food-dec">
+              <text>商品信息</text>
+              <scroll-view scroll-y class="details">
+                <import src="../../../common/wxParse.wxml" />
+                <template is="wxParse" data="{{wxParseData:detail_desc.nodes}}" />
+              </scroll-view>
+            </view>
+          </view>
+        </view>
+    </view>
+    <view class="detail_tj">
+      <text class="detail_tj-list" bindtap="prevnext" data-id="{{prevnext.prev.id}}">上一个：
+        <text wx:if="{{prevnext.prev.id}}">{{prevnext.prev.title}}</text>
+        <text wx:else>没有了</text>
+      </text>
+      <text class="detail_tj-list" bindtap="prevnext" data-id="{{prevnext.next.id}}">下一个：
+        <text wx:if="{{prevnext.next.id}}">{{prevnext.next.title}}</text>
+        <text wx:else>没有了</text>
+      </text>
+    </view>
+  </view>
+</view>

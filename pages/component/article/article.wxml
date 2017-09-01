@@ -6,8 +6,8 @@
 
 
 <view class="main">
-    <template is="nav" data="{{config}}" />
-    <template is="bar" data="{{category_info}}" />
+    <template is="nav" data="{{config,page_title,page_title_en}}" />
+    <template is="bar" data="{{topNavs}}" />
     <template is="article_bar" data="{{scrollLeft,activeIndex,articalUl}}" />
     <view class="artical-ul">
         <navigator wx:for="{{article}}" url="../article-detail/article-detail?id={{item.id}}" class="artical-li">

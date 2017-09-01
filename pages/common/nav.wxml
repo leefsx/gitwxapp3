@@ -1,14 +1,37 @@
 <template name="nav">
-    <view class="topbar">
-      <view class="topbar-title">
-        <image mode="aspectFit" src="{{config.logo}}" data-index="0" data-type="logourl" bindtap="tocategory"></image>
-        <view>
-          <text class="tooLong">{{config.logo_title}}</text>
-          <text wx:if="{{config.logo_subtitle.length > 0}}" class="color2 small_font tooLong">{{config.logo_subtitle}}</text>
+    <view class="nav">
+      <view class="base-info">
+        <view>欢迎来到某某教育网</view>
+        <view class="tele">
+          <image src="/image/tele.png"></image>
+          <text>400-0000-0000</text>
         </view>
       </view>
-      <view class="topbar-img bg_color5" bindtap="showBar">
-        <image src="/image/mb2-4.png"/>
+      <view class="topbar">
+        <view class="topbar-title">
+          <image mode="aspectFit" src="{{config.logo}}" data-index="0" data-type="logourl" bindtap="tocategory"></image>
+          <!-- <image mode="aspectFit" src="/image/logo.png" data-index="0" data-type="logourl" bindtap="tocategory"></image> -->
+          <view>
+            <text class="tooLong">{{config.logo_title}}</text>
+            <text wx:if="{{config.logo_subtitle.length > 0}}" class="color2 small_font tooLong">{{config.logo_subtitle}}</text>
+          </view>
+        </view>
+        <view class="topbar-img bg_color5" bindtap="showBar">
+          <image src="/image/mb2-4.png"/>
+        </view>
+      </view>
+      <view class="topnav-slider">
+        <swiper indicator-dots="true" autoplay="true" interval="3000" duration="800" circular="true">
+          <block wx:for="{{config.index_autoplay_img}}" wx:key="{{index}}">
+            <swiper-item>
+              <image mode="aspectFit" src="{{item}}" data-type="index_autoplay_imgurl" data-index="{{index}}" bindtap="tocategory" class="slide-image" />
+            </swiper-item>
+          </block> 
+        </swiper>
+      </view>
+      <view class="page-title" wx:if="{{page_title.length>0}}">
+        <text>{{page_title}}</text>
+        <text>{{page_title_en}}</text>
       </view>
     </view>
 </template>

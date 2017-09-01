@@ -1,8 +1,10 @@
 .artical-category{
     width: 100%;
+    padding: 0rpx 10rpx;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 .artical-category .category-arrow{
     width: 6%;
@@ -40,5 +42,5 @@
 }
 .artical-category scroll-view view.active{
     color: #fff;
-    background-color: #41b327;
+    background-color: #efbb4e;
 }

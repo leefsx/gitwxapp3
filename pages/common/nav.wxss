@@ -1,0 +1,95 @@
+.nav{
+    display: flex;
+    flex-direction: column;
+}
+.base-info{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 0 20rpx;
+    font-size: 24rpx;
+    color: #fff;
+    background-color: #e76565;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+.base-info image{
+    width: 50rpx;
+    height: 50rpx;
+}
+.tele{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.topnav-slider swiper{
+    width: 100%;
+    height: 640rpx;
+}
+.topnav-slider swiper image{
+    width: 100%;
+}
+.topbar {
+    padding: 30rpx 20rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+    align-items: center;
+  }
+  .topbar-title{
+    display: flex;
+    align-items: center;
+  }
+  .topbar-title image {
+    width: 120rpx;
+    height: 90rpx;
+    vertical-align: top;
+    line-height: 80rpx;
+  }
+  .topbar-title view{
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    text-align: left;
+    margin-left: 15rpx;
+  }
+  .topbar-title view text:first-child{
+    font-size: 40rpx;
+  }
+  .topbar-title view text{
+    max-width: 480rpx;
+  }
+/* .topbar text {
+  display: block;
+  margin-left: 10rpx;
+} */
+/* .topbar-title>text{
+  display: inline-block;
+  font-size: 42rpx;
+  line-height: 80rpx;
+  color: #282828;
+} */
+  .topbar-img{
+    width: 87rpx;
+    height: 86rpx;
+    border-radius: 8rpx;
+    text-align: center;
+    line-height: 86rpx;
+  }
+  .topbar-img image{
+    width: 64rpx;
+    height: 64rpx;
+    margin-top: 10rpx;
+  }
+  .page-title{
+    height: 100rpx;
+    line-height: 100rpx;
+    padding: 0 50rpx;
+    color: #3d3d3d;
+    font-size: 36rpx;
+  }
+  .page-title text:last-child{
+    color: #b5b5b5;
+    margin-left: 15rpx;
+  }

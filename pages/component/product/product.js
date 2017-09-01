@@ -22,15 +22,15 @@ Page({
         scrollNum:0,
         li_width:0,
         articalUl:[],
-        article: []   
+        products: []
     },
     onShow: function () {
           let li_width = this.data.li_width
           let that= this
           this.setData({
             config: config,
-            page_title:'新闻资讯',
-            page_title_en:'NEWS'
+            page_title:'产品中心',
+            page_title_en:'PRODUCTS'
           })
           wx.getSystemInfo({
             success: function (res) {
@@ -45,7 +45,7 @@ Page({
           })
         
           // bar.getCategory(this)
-          this.getArticlesFromServer(10,1)
+          this.getProductsFromServer(10,1)
           bar.hideBar(this)
       },
     onLoad(options) {
@@ -56,7 +56,6 @@ Page({
             var that = this;
             that.setData({
                 activeIndex: aid,
-                // intoView:'a'+aid
             })
         }
     },
@@ -74,7 +73,7 @@ Page({
         this.setData({
             activeIndex: id
         })
-        this.getArticlesFromServer(10, 1)
+        this.getProductsFromServer(10, 1)
 
     },
     arrowMinus(){
@@ -90,27 +89,76 @@ Page({
     oTe: function (e) {
       art_bar.oTe(e,this)
     },
-    getArticlesFromServer(list_num, page) {
-      var that = this
-      var article_category = that.data.activeIndex
+    getProductsFromServer(list_num, page) {
+      var that = this;
+      var product_category = that.data.activeIndex
+      that.setData({
+        loading: true
+      })
       app.request({
-        url: comm.parseToURL('article', 'list'),
+        url: app.domain + '/api/product/catelist',
         data: {
-          list_num: list_num,
-          page: page,
-          article_category: article_category
+          
         },
+        method: 'GET',
         success: function (res) {
           if (res.data.result == 'OK') {
             that.setData({
-              article: res.data.data,
-              articalUl: res.data.category,
-              'prompt.hidden' : res.data.data.length
+              articalUl: res.data.data
             })
           } else {
-
+            wx.showToast({
+              title: '请求失败'
+            })
           }
         }
       })
+      app.request({
+        url: app.domain + '/api/product/list',
+        data: {
+          list_num: list_num,
+          product_category: product_category,
+          p: page
+        },
+        method: 'GET',
+        success: function (res) {
+          if (res.data.result == 'OK') {
+            var resdata = res.data.data
+            if (page > 1 && resdata.length > 0) {
+              var this_products = that.data.products
+              this_products = this_products.concat(resdata)
+            }else{
+              var this_products = resdata
+            }
+            that.setData({
+              products: this_products,
+              list_page: page,
+              loading: false
+            })
+          }
+          if (that.data.products.length==0){
+            that.setData({
+              'prompt.hidden':false
+            })
+          }
+        },
+        fail: function () {
+          console.log('fail');
+        },
+        complete: function () {
+          console.log('complete!');
+        }
+      })
+    },
+    load_more() {
+      var this_page = this.data.list_page
+      if (this_page > 0) {
+        this.getProductsFromServer(6, this_page + 1)
+      }
+    },
+    onReachBottom: function(){
+      if (!this.data.loading) {
+        this.load_more()
+      }
     }
 })

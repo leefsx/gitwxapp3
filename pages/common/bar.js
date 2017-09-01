@@ -4,7 +4,8 @@ function showBar(_this) {
 
 
   _this.setData({
-    'category_info.isShowBar': true
+    // 'category_info.isShowBar': true
+    'topNavs.isShowBar': true
   })
 
 }
@@ -13,7 +14,8 @@ function hideBar(_this) {
 
 
   _this.setData({
-    'category_info.isShowBar': false
+    // 'category_info.isShowBar': false
+    'topNavs.isShowBar': false
   })
 
 }
@@ -43,6 +45,7 @@ function getCategory(_this){
       }
     })
 }
+
 
 
 function barSwitchTab(e, _this){

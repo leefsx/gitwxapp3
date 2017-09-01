@@ -1,5 +1,7 @@
 /**app.wxss**/
+@import 'pages/common/nav.wxss';
 @import 'pages/common/prompt.wxss';
+@import '/pages/common/article_bar.wxss';
 page {
   /* background-color: #F8F8F8; */
   height: 100%;
@@ -23,9 +25,10 @@ page {
 .bor_color{border-color: #c71f3b; }
 .bg_color{background-color: #c71f3b;color:#fff;}
 .bg_color3{background-color:#f1910f;color:#fff;}
-.color5{ color: #41b327;}
-.bor_color5{border-color: #41b327 }
-.bg_color5{background-color: #41b327;color:#fff;}
+/* .color5{ color: #41b327;} */
+.color5{ color: #efbb4e;}
+.bor_color5{border-color: #efbb4e }
+.bg_color5{background-color: #efbb4e;color:#fff;}
 
 .small_font{font-size: 26rpx;}
 .medium_font{
@@ -72,59 +75,9 @@ page {
   color: #383838;
   font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
 }
-.topbar {
-  padding: 30rpx 20rpx;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content:space-between;
-  align-items: center;
-}
-.topbar-title{
-  display: flex;
-  align-items: center;
-}
-.topbar-title image {
-  width: 100rpx;
-  height: 80rpx;
-  vertical-align: top;
-  line-height: 80rpx;
-}
-.topbar-title view{
-  display: flex;
-  flex-direction: column;
-  align-items: space-around;
-  text-align: left;
-  margin-left: 15rpx;
-}
-.topbar-title view text:first-child{
-  font-size: 40rpx;
-}
-.topbar-title view text{
-  max-width: 480rpx;
-}
-/* .topbar text {
-  display: block;
-  margin-left: 10rpx;
-} */
-/* .topbar-title>text{
-  display: inline-block;
-  font-size: 42rpx;
-  line-height: 80rpx;
-  color: #282828;
-} */
-.topbar-img{
-  width: 87rpx;
-  height: 86rpx;
-  border-radius: 8rpx;
-  text-align: center;
-  line-height: 86rpx;
-}
-.topbar-img image{
-  width: 64rpx;
-  height: 64rpx;
-  margin-top: 10rpx;
-}
+
+
+
 .c-minheight {
   min-height: 80px;
 }
@@ -308,14 +261,14 @@ page {
   /* animation: action 1s;
   animation-fill-mode: forwards;  */
 }
-.bar-all view{
+.bar-all navigator{
   padding-left: 40rpx;
   height: 70rpx;
   line-height: 70rpx;
   border-bottom: 2rpx solid #e5e5e5;
   text-align: left;
 }
-.bar-all view:last-child{
+.bar-all navigator:last-child{
   border-bottom: none;
 }
 

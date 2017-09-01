@@ -1,0 +1,17 @@
+<import src="../../common/prompt.wxml"/>
+<import src="../../common/nav.wxml" />
+<import src="../../common/bar.wxml" />
+<import src="../../common/article_bar.wxml" />
+<import src="../../common/productList2.wxml" />
+
+
+
+<view class="main">
+    <template is="nav" data="{{config,page_title,page_title_en}}" />
+    <template is="bar" data="{{topNavs}}" />
+    <template is="article_bar" data="{{scrollLeft,activeIndex,articalUl}}" />
+    <view class="product-display-ul">
+        <template is="product_list2" data="{{products}}" />
+        <template is="prompt" data="{{prompt}}"></template>
+    </view>
+</view>
