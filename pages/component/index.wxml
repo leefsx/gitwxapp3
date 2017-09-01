@@ -10,7 +10,7 @@
       <image mode="aspectFit" src="/image/us-img.jpg"></image>
       <view>
         <view class="nav-list-name"><text>关于我们</text><text>ABOUT US</text></view>
-        <view class="medium_font">教育培训学校是XX地区最权威的 教育培训网络服务平台之一。网站创办于2005年，以XX地区丰富的教育培训教育培训网络服务平台之一教育培训务平台之一</view>
+        <view class="medium_font textview">教育培训学校是XX地区最权威的 教育培训网络服务平台之一。网站创办于2005年，以XX地区丰富的教育培训教育培训网络服务平台之一教育培训务平台之一</view>
       </view>
       <navigator class="toDetail color5 medium_font" url="/pages/component/about_us/about_us">查看详情</navigator>
     </view>
@@ -59,6 +59,8 @@
           <template is="product_list2" data="{{products}}"/>
       </view>
   </view>
+
+  
 
  </view>
  <view class="help-port small_font" data-index="0" data-type="navarticle_url" bindtap="tocategory">{{config.navarticle_title}}</view>
