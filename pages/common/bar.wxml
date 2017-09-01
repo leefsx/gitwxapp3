@@ -1,7 +1,7 @@
 <template name="bar">
     <view class="mask" bindtap="hideBar" wx:if="{{topNavs.isShowBar}}"></view>
-    <view class="bar-all  medium_font" wx:if="{{topNavs.isShowBar}}">
-        <navigator url="{{item.url}}" class="bg_color5" wx:for="{{topNavs.navList}}" data-name="{{item.name}}" data-id="{{item.id}}" data-index="{{index}}">
+    <view class="bar-all  medium_font" wx:if="{{topNavs.isShowBar}}" style="background-color:{{navcolumn_color}};">
+        <navigator url="{{item.url}}" class="bg_color5" wx:for="{{topNavs.navList}}" data-name="{{item.name}}" data-id="{{item.id}}" data-index="{{index}}" style="color:{{topNavs.navfont_color}};background-color:{{topNavs.navcolumn_color}};">
             {{item.name}}
         </navigator>
     </view>

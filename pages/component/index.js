@@ -37,6 +37,8 @@ Page({
         config: config,
         index_autoplay_imgurl: config.index_autoplay_imgurl,
         'topNavs.navList':app.globalData.navList,
+        'topNavs.navcolumn_color': config.navcolumn_color,
+        'topNavs.navfont_color': config.navfont_color,
         service_img:[
           {
             img:'/image/service1.jpg',
@@ -146,5 +148,43 @@ Page({
       title: config.logo_title,
       path: 'pages/component/index'
     }
-  }
+  },
+  tocategory(opt) {
+    var cindex = opt.currentTarget.dataset.index
+    var type = opt.currentTarget.dataset.type
+    var imgdata = []
+    
+    if (type == 'index_autoplay_imgurl') {
+      imgdata = config.index_autoplay_imgurl
+    }  else if (type == 'logourl') {
+      imgdata[0] = config.logourl
+    } else if (type == 'ourservice_imgsurl'){
+      imgdata = config.ourservice_imgsurl
+    } else if (type == 'news_imgurl') {
+      imgdata = config.news_imgurl
+    }
+    if (typeof (imgdata[cindex]['category_id']) != 'undefined') {
+      app.globalData.cateid = imgdata[cindex]['category_id']
+      //app.globalData.catename = 
+      wx.switchTab({
+        url: 'category/category'
+      })
+    } else if (typeof (imgdata[cindex]['detail_id']) != 'undefined') {
+      wx.navigateTo({
+        url: 'details/details?id=' + imgdata[cindex]['detail_id'],
+      })
+
+    } else if (typeof (imgdata[cindex]['article_cid']) != 'undefined') {
+      wx.navigateTo({
+        url: 'article/article?id=' + imgdata[cindex]['article_cid'],
+      })
+
+    } else if (typeof (imgdata[cindex]['article_did']) != 'undefined') {
+      wx.navigateTo({
+        url: 'article-detail/article-detail?id=' + imgdata[cindex]['article_did'],
+      })
+
+    }
+
+  },
 })
