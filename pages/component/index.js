@@ -61,8 +61,37 @@ Page({
       })
 
     bar.hideBar(this)
-    this.getArticlesFromServer(6,1)
-    this.getProductsFromServer(4,1)
+    if (config.news_datasource){
+      var datasource = { ids: config.news_datasource, dist:'news' }
+      this.getAssignResources({
+        data: datasource,
+        success: function (res) {
+          if (res) {
+            that.setData({
+              article: res
+            })
+          }
+        }
+      })
+    } else {
+      this.getArticlesFromServer(6, 1)
+    }
+    if (config.products_datasource) {
+      var datasource = { ids: config.products_datasource }
+      this.getAssignResources({
+        data: datasource,
+        success: function (res) {
+          if (res) {
+            that.setData({
+              products: res
+            })
+          }
+        }
+      })
+    } else {
+      this.getProductsFromServer(4, 1)
+    }
+    
     console.log(that.data.article)
   },
   getArticlesFromServer(list_num, page) {
@@ -187,4 +216,40 @@ Page({
     }
 
   },
+  getAssignResources: function (obj) {
+    var that = this
+    var data = obj.data
+    if (data.type == 'all') {
+      var ids = ''
+      var list_num = data.list_num
+    } else {
+      if (data.ids) {
+        var ids = data.ids
+        var ids_arr = ids.split(',')
+        var list_num = ids_arr.length
+      } else {
+        return false
+      }
+    }
+    if (data.dist == 'news') {
+      var url = app.domain + '/api/article/list'
+    } else {
+      var url = app.domain + '/api/product/list'
+    }
+
+    app.request({
+      url: url,
+      data: {
+        ids: ids,
+        list_num: list_num
+      },
+      success: function (res) {
+        if (res.data.result == 'OK') {
+          typeof obj.success == "function" && obj.success(res.data.data)
+        } else {
+          typeof obj.success == "function" && obj.success(false)
+        }
+      }
+    })
+  }
 })
