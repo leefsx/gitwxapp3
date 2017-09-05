@@ -9,8 +9,8 @@
     <view class="about-us-main">
       <image mode="aspectFit" src="{{config.homepage_aboutus_img[0]}}"></image>
       <view style="color:{{config.homepage_aboutus_desc_color}};background-color:{{config.homepage_aboutus_desc_bgcolor}};">
-        <view class="nav-list-name"><text>关于我们</text><text>ABOUT US</text></view>
-        <view class="medium_font textview">{{config.homepage_aboutus_desc}}</view>
+        <view class="nav-list-name"><text>{{config.aboutus_title}}</text></view>
+        <view class="medium_font textview">{{config.aboutus_desc}}</view>
       </view>
       <navigator class="toDetail color5 medium_font" url="/pages/component/about_us/about_us" style="color:{{config.homepage_aboutus_more_color}};border-color:{{config.homepage_aboutus_more_bordercolor}};">{{config.homepage_aboutus_more}}</navigator>
     </view>
@@ -26,7 +26,7 @@
   </view>
 
   <view class="news">
-      <view class="nav-list-name"><text>新闻资讯</text><text>NEWS</text></view>
+      <view class="nav-list-name"><text>{{config.news_category_title}}</text></view>
       <view class="news-main">
           <swiper indicator-dots="true" autoplay="true" interval="3000" duration="800" circular="true">
             <block wx:for="{{news_img}}" wx:key="{{index}}" >
@@ -48,7 +48,7 @@
                   </navigator>
                   <template is="prompt" data="{{prompt}}"></template>
               </view>
-            <navigator class="toDetail medium_font" url="/pages/component/article/article" style="color:{{config.news_more_color}};border-color:{{config.news_more_bordercolor}};">查看详情</navigator>
+            <navigator class="toDetail medium_font" url="/pages/component/article/article" style="color:{{config.news_more_color}};border-color:{{config.news_more_bordercolor}};">{{config.news_more}}</navigator>
           </view>
       </view>
   </view>
