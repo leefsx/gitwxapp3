@@ -96,24 +96,29 @@ App({
     navList:[
       {
         name:"首页",
-        url:'/pages/component/index'
+        url:'/pages/component/index',
+        link:true
       },
       {
         name:"关于我们",
-        url:'/pages/component/about_us/about_us'
+        url:'/pages/component/about_us/about_us',
+        link: true
       },
       {
         name:"新闻资讯",
-        url:'/pages/component/article/article'
+        url:'/pages/component/article/article',
+        link: true
       },
       {
         name:"产品中心",
-        url:'/pages/component/product/product'
+        url:'/pages/component/product/product',
+        link: true
+      },
+      {
+        name:"联系我们",
+        url:'/pages/component/article-detail/article-detail?id=2',
+        link: false
       }
-      // {
-      //   name:"联系我们",
-      //   url:'/pages/component/article-detail/article-detail?id=2'
-      // }
     ]
   }
 })

@@ -91,7 +91,7 @@ swiper-item image {
   height: 300rpx;
 }
 .about-us-main>view{
-  padding: 0 20rpx;
+  padding: 0 20rpx 15rpx 20rpx;
 }
 .nav-list-name{
   color:#3d3d3d;
@@ -157,4 +157,7 @@ swiper-item image {
   word-break: break-all;
   -webkit-box-orient: vertical;
   -webkit-line-clamp:3; 
+}
+.product-center{
+  padding: 0 10rpx;
 }

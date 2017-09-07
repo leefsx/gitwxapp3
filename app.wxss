@@ -251,7 +251,7 @@ page {
 .bar-all{
   width: 100%;
   /* padding: 20rpx 0; */
-  background-color: #fff;
+  color: #fff;
   position: fixed;
   left: 0;
   z-index: 14;
@@ -268,9 +268,9 @@ page {
   border-bottom: 2rpx solid #e5e5e5;
   text-align: left;
 }
-.bar-all navigator:last-child{
+/* .bar-all navigator:last-child{
   border-bottom: none;
-}
+} */
 
 .help-port{
   height: 70rpx;
@@ -278,6 +278,7 @@ page {
   text-align: center;
   border-top: 1rpx solid #e9e9e9;
 }
+
 
 
 

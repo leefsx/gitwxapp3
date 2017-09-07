@@ -63,7 +63,7 @@
   
 
  </view>
- <view class="help-port small_font" data-index="0" data-type="navarticle_url" bindtap="tocategory">{{config.navarticle_title}}</view>
+ <contact-button  type="default-dark" size="20"session-from="weapp"></contact-button>
  <view class="copyright small_font" style="color:{{config.copyright_color}};background-color:{{config.copyright_bgcolor}};">
    @{{config.copyright}}
  </view>

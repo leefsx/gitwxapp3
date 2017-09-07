@@ -123,15 +123,15 @@ Page({
     this.getProductsFromServer(list_num, 1)
     wx.stopPullDownRefresh()
   },
-  load_more(){
-    var this_page = this.data.list_page
-    if (this_page>0){
-      var new_list = this.getProductsFromServer(4, this_page+1)
-    }
-  },
-  onReachBottom() {
-        this.load_more()
-  },
+  // load_more(){
+  //   var this_page = this.data.list_page
+  //   if (this_page>0){
+  //     var new_list = this.getProductsFromServer(4, this_page+1)
+  //   }
+  // },
+  // onReachBottom() {
+  //       this.load_more()
+  // },
   getProductsFromServer(list_num, page) {
     var that = this;
     app.request({
