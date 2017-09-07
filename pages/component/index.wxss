@@ -127,6 +127,7 @@ swiper-item image {
 .news-main swiper{
   width: 100%;
   height: 350rpx;
+  margin-bottom: -1px;
 }
 .news-main image{
   width: 100%;

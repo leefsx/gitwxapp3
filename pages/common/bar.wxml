@@ -2,10 +2,10 @@
     <view class="mask" bindtap="hideBar" wx:if="{{topNavs.isShowBar}}"></view>
     <view class="bar-all  medium_font" wx:if="{{topNavs.isShowBar}}" style="background-color:{{navcolumn_color}};">
         <view wx:for="{{topNavs.navList}}">
-          <navigator wx:if="{{item.link}}" url="{{item.url}}" class="bg_color5"  data-name="{{item.name}}" data-id="{{item.id}}" data-index="{{index}}" style="color:{{topNavs.navfont_color}};background-color:{{topNavs.navcolumn_color}};">
+          <navigator hover-class="none" wx:if="{{item.link}}" url="{{item.url}}" class="bg_color5"  data-name="{{item.name}}" data-id="{{item.id}}" data-index="{{index}}" style="color:{{topNavs.navfont_color}};background-color:{{topNavs.navcolumn_color}};">
               {{item.name}}
           </navigator>
-          <navigator wx:else class="bg_color5"  data-name="{{item.name}}" data-id="{{item.id}}" data-index="{{index}}" style="color:{{topNavs.navfont_color}};background-color:{{topNavs.navcolumn_color}};border-bottom:none;">
+          <navigator hover-class="none" wx:else class="bg_color5"  data-name="{{item.name}}" data-id="{{item.id}}" data-index="{{index}}" style="color:{{topNavs.navfont_color}};background-color:{{topNavs.navcolumn_color}};border-bottom:none;">
               <button class="contact-btn" open-type="contact" style="background-color:transparent;color:#fff;font-size:28rpx;text-align:left;padding-left:0;">{{item.name}}</button>
           </navigator>
         </view>

@@ -25,6 +25,7 @@
 .topnav-slider swiper{
     width: 100%;
     height: 640rpx;
+    margin-bottom: 0;
 }
 .topnav-slider swiper image{
     width: 100%;
