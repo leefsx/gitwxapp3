@@ -33,8 +33,8 @@ module.exports = {
         "url": ""
     }],
     "homepage_aboutus_desc": "关于我们 ABOUT US\n教育培训学校是XX地区最权威的 教育培训网络服务平台之一。网站创办于2005年，以XX地区丰富的教育培训教育培训网络服务平台之一教育培训务平台之一",
-    "homepage_aboutus_desc_color": "#fcb848",
-    "homepage_aboutus_desc_bgcolor": "#fcb848",
+    "homepage_aboutus_desc_color": "#000",
+    "homepage_aboutus_desc_bgcolor": "#fff",
     "homepage_aboutus_more": "查看详情",
     "homepage_aboutus_more_color": "#fcb848",
     "homepage_aboutus_more_bordercolor": "#fcb848",
