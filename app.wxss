@@ -279,7 +279,9 @@ page {
   border-top: 1rpx solid #e9e9e9;
 }
 
-
+.contact-btn::after{
+  border: none;
+}
 
 
 
