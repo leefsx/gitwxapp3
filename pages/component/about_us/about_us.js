@@ -37,4 +37,12 @@ Page({
     hideBar() {
       bar.hideBar(this)
     },
+    pageRedirectTo(e) {
+      var url = e.currentTarget.dataset.url;
+      if (url) {
+        wx.redirectTo({
+          url: url,
+        })
+      }
+    }
 })
