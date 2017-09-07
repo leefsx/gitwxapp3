@@ -97,10 +97,10 @@ swiper-item image {
   color:#3d3d3d;
   line-height: 80rpx;
 }
-.nav-list-name text:last-child{
+/* .nav-list-name text:last-child{
   color: #b5b5b5;
   margin-left: 20rpx;
-}
+} */
 .toDetail{
   margin-left: 20rpx;
   margin-top: 20rpx;
