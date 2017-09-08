@@ -22,14 +22,15 @@ Page({
         scrollNum:0,
         li_width:0,
         articalUl:[],
-        article: []   
+        article: [],
+        page_title: '新闻资讯'  
     },
     onShow: function () {
           let li_width = this.data.li_width
           let that= this
           this.setData({
             config: config,
-            page_title:'新闻资讯',
+            page_title: config.news_category_title,
             page_title_en:'NEWS'
           })
           wx.getSystemInfo({

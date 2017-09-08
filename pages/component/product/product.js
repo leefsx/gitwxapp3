@@ -22,14 +22,15 @@ Page({
         scrollNum:0,
         li_width:0,
         articalUl:[],
-        products: []
+        products: [],
+        page_title: '产品中心',
     },
     onShow: function () {
           let li_width = this.data.li_width
           let that= this
           this.setData({
             config: config,
-            page_title:'产品中心',
+            page_title: config.products_title,
             page_title_en:'PRODUCTS'
           })
           wx.getSystemInfo({

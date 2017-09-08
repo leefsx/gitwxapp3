@@ -11,13 +11,14 @@ Page({
           isShowBar:false
         },
         config:[],
+        page_title: '关于我们'
     },
     onShow: function () {
           let li_width = this.data.li_width
           let that= this
           this.setData({
             config: config,
-            page_title:'关于我们',
+            page_title: config.aboutus_title,
             page_title_en:'ABOUT US',
             'topNavs.navList':app.globalData.navList
           })

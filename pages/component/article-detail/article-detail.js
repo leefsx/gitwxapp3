@@ -16,7 +16,7 @@ Page({
           navList:[],
           isShowBar:false
         },
-    
+        page_title: '新闻资讯'
     },
     onShow: function () {
       let li_width = this.data.li_width
@@ -77,7 +77,7 @@ Page({
       })
       that.setData({
         config: config,
-        page_title:'新闻资讯',
+        page_title: config.news_category_title,
         page_title_en:'NEWS'
       })
       this.getArticleCategory()

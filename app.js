@@ -100,17 +100,17 @@ App({
         link:true
       },
       {
-        name:"关于我们",
+        name: config.aboutus_title,
         url:'/pages/component/about_us/about_us',
         link: true
       },
       {
-        name:"新闻资讯",
+        name: config.news_category_title,
         url:'/pages/component/article/article',
         link: true
       },
       {
-        name:"产品中心",
+        name: config.products_title,
         url:'/pages/component/product/product',
         link: true
       },

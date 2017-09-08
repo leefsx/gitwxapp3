@@ -34,7 +34,8 @@ Page({
     scrollLeft:0,
     scrollNum:0,
     li_width:0,
-    articalUl:[]
+    articalUl:[],
+    page_title: '产品中心'
   },
   onShow(){
     let li_width = this.data.li_width
@@ -125,7 +126,7 @@ Page({
       that.setData({
         carts: app.globalData.carts,
         config: config,
-        page_title:'产品中心',
+        page_title: config.products_title,
         page_title_en:'PRODUCTS'
       })
       app.request({
