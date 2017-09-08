@@ -95,7 +95,8 @@ swiper-item image {
 }
 .nav-list-name{
   color:#3d3d3d;
-  line-height: 80rpx;
+  line-height: 100rpx;
+  font-size: 36rpx;
 }
 /* .nav-list-name text:last-child{
   color: #b5b5b5;
@@ -105,9 +106,10 @@ swiper-item image {
   margin-left: 20rpx;
   margin-top: 20rpx;
   display: inline-block;
-  padding: 5rpx 30rpx;
+  padding: 8rpx 46rpx;
   border: 2px solid  #efbb4e;
   border-radius: 20px;
+  font-size: 24rpx;
 }
 .service-main{
   padding: 10rpx 5.5% 10rpx 5.5%;
