@@ -115,7 +115,7 @@ App({
         link: true
       },
       {
-        name:"联系我们",
+        name: config.contact_us_text || '联系我们',
         url:'/pages/component/article-detail/article-detail?id=2',
         link: false
       }
