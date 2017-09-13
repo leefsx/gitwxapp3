@@ -95,21 +95,19 @@ swiper-item image {
 }
 .nav-list-name{
   color:#3d3d3d;
-  line-height: 100rpx;
-  font-size: 36rpx;
+  line-height: 80rpx;
 }
-/* .nav-list-name text:last-child{
+.nav-list-name text:last-child{
   color: #b5b5b5;
   margin-left: 20rpx;
-} */
+}
 .toDetail{
   margin-left: 20rpx;
   margin-top: 20rpx;
   display: inline-block;
-  padding: 8rpx 46rpx;
+  padding: 5rpx 30rpx;
   border: 2px solid  #efbb4e;
   border-radius: 20px;
-  font-size: 24rpx;
 }
 .service-main{
   padding: 10rpx 5.5% 10rpx 5.5%;
@@ -129,7 +127,6 @@ swiper-item image {
 .news-main swiper{
   width: 100%;
   height: 350rpx;
-  margin-bottom: -1px;
 }
 .news-main image{
   width: 100%;
