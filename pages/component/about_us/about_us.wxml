@@ -8,7 +8,7 @@
     <template is="nav" data="{{config,page_title,page_title_en}}" />
     <template is="bar" data="{{topNavs}}" />
     <view class="us-article">
-        <view class="us-img"><image src="/image/us-img.jpg"></image></view>
+        <view class="us-img"><image src="{{config.aboutus_img}}"></image></view>
         <view class="us-content">
                 {{config.aboutus_desc}}
         </view>

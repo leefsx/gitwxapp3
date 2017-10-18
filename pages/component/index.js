@@ -191,12 +191,14 @@ Page({
       imgdata = config.ourservice_imgsurl
     } else if (type == 'news_imgurl') {
       imgdata = config.news_imgurl
+    } else if (type == 'homepage_aboutus_imgurl') {
+      imgdata = config.homepage_aboutus_imgurl
     }
     if (typeof (imgdata[cindex]['category_id']) != 'undefined') {
       app.globalData.cateid = imgdata[cindex]['category_id']
       //app.globalData.catename = 
-      wx.switchTab({
-        url: 'category/category'
+      wx.navigateTo({
+        url: 'product/product?id=' + imgdata[cindex]['category_id']
       })
     } else if (typeof (imgdata[cindex]['detail_id']) != 'undefined') {
       wx.navigateTo({

@@ -7,7 +7,7 @@
   <view class="about-us">
     <view class="about-us-bg bg_color5"></view>
     <view class="about-us-main">
-      <image mode="aspectFit" src="{{config.homepage_aboutus_img[0]}}"></image>
+      <image mode="aspectFit" src="{{config.homepage_aboutus_img[0]}}" data-type='homepage_aboutus_imgurl' data-index='0' bindtap='tocategory'></image>
       <view style="color:{{config.homepage_aboutus_desc_color}};background-color:{{config.homepage_aboutus_desc_bgcolor}};">
         <view class="nav-list-name"><text>{{config.aboutus_title}}</text></view>
         <view class="medium_font textview">{{config.aboutus_desc}}</view>
