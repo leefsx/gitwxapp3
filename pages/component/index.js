@@ -57,7 +57,7 @@ Page({
             url:'/pages/component/product/product'
           }
         ],
-        news_img:['/image/news-img1.jpg','/image/news-img2.jpg']
+        news_img: config.news_img
       })
 
     bar.hideBar(this)
