@@ -20,7 +20,9 @@ Page({
             config: config,
             page_title: config.aboutus_title,
             page_title_en:'ABOUT US',
-            'topNavs.navList':app.globalData.navList
+            'topNavs.navList': app.globalData.navList,
+            'topNavs.navcolumn_color': config.navcolumn_color,
+            'topNavs.navfont_color': config.navfont_color,
           })
         
           // bar.getCategory(this)

@@ -40,7 +40,9 @@ Page({
                 li_width:li_width,
                 deviceWidth: res.windowWidth,
                 deviceHeight: res.windowHeight,
-                'topNavs.navList':app.globalData.navList
+                'topNavs.navList': app.globalData.navList,
+                'topNavs.navcolumn_color': config.navcolumn_color,
+                'topNavs.navfont_color': config.navfont_color,
               })
             }
           })
