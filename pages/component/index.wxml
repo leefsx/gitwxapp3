@@ -7,7 +7,7 @@
   <view class="about-us">
     <view class="about-us-bg bg_color5"></view>
     <view class="about-us-main">
-      <image mode="aspectFit" src="{{config.homepage_aboutus_img[0]}}" data-type='homepage_aboutus_imgurl' data-index='0' bindtap='tocategory'></image>
+      <image mode="aspectFit" wx:if="{{config.homepage_aboutus_img[0]}}" src="{{config.homepage_aboutus_img[0]}}" data-type='homepage_aboutus_imgurl' data-index='0' bindtap='tocategory'></image>
       <view style="color:{{config.homepage_aboutus_desc_color}};background-color:{{config.homepage_aboutus_desc_bgcolor}};">
         <view class="nav-list-name"><text>{{config.aboutus_title}}</text></view>
         <view class="medium_font textview">{{config.aboutus_desc}}</view>
@@ -37,7 +37,7 @@
           </swiper>
           <view class="news-content bg_color5" style="background-color:{{config.news_bgcolor}};">
               <view class="artical-ul">
-                  <navigator wx:for="{{article}}" url="/pages/component/article-detail/article-detail?id={{item.id}}" class="artical-li">
+                  <navigator wx:for="{{article}}" wx:key="{{index}}" url="/pages/component/article-detail/article-detail?id={{item.id}}" class="artical-li">
                       <view class="artical-li-title small_font">
                           <view>
                               <text style="color:{{config.news_color}};">[{{item.category_name}}]</text>
@@ -46,7 +46,7 @@
                           <text class="small_font" style="color:{{config.news_date_color}};">{{item.publish_time}}</text>
                       </view>
                   </navigator>
-                  <template is="prompt" data="{{prompt}}"></template>
+                  
               </view>
             <navigator class="toDetail medium_font" url="/pages/component/article/article" style="color:{{config.news_more_color}};border-color:{{config.news_more_bordercolor}};">{{config.news_more}}</navigator>
           </view>

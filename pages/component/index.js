@@ -92,7 +92,6 @@ Page({
       this.getProductsFromServer(4, 1)
     }
     
-    console.log(that.data.article)
   },
   getArticlesFromServer(list_num, page) {
     var that = this
@@ -143,7 +142,6 @@ Page({
       },
       method: 'GET',
       success: function (res) {
-        console.log(res)
         var resdata = res.data.data
         if (page > 1 && resdata.length > 0) {
           var this_products = that.data.products
@@ -168,7 +166,6 @@ Page({
         console.log('fail');
       },
       complete: function () {
-        console.log('complete!');
       }
     })
   },
