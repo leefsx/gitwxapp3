@@ -197,6 +197,14 @@ Page({
       title: config.logo_title +' '+ this.data.detail_data['name'],
       path: 'pages/component/details/details?id=' + this.data.product_id
     }
+  },
+  pageRedirectTo(e) {
+    var url = e.currentTarget.dataset.url;
+    if (url) {
+      wx.redirectTo({
+        url: url,
+      })
+    }
   }
 
 })
